@@ -5,13 +5,20 @@ using UnityEngine;
 public class BackpackBehaviour : MonoBehaviour {
 
     public Backpack m_Backpack;
+    
+    public int Capacity;
 
-    Backpack runtimeBackpack;
+    public List<Item> Inventory;
 
 	// Use this for initialization
 	void Start ()
     {
-        runtimeBackpack = Instantiate(m_Backpack);
+        Capacity = m_Backpack.m_Capacity;
+        Inventory = new List<Item>();
+        foreach (var it in m_Backpack.m_Items)
+        {
+            AddItem(it);
+        }
 	}
 	
 	// Update is called once per frame
@@ -22,6 +29,13 @@ public class BackpackBehaviour : MonoBehaviour {
 
     public void AddItem(Item item)
     {
-        m_Backpack.m_Items.Add(item);
+        Inventory.Add(item);
+    }
+
+    public void RemoveItem(Item item)
+    {
+        if (!Inventory.Contains(item)) return;
+        if (Inventory.Count == 0) return;
+        Inventory.Remove(item);
     }
 }

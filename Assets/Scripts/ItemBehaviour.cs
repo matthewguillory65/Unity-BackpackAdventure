@@ -26,8 +26,12 @@ public class ItemBehaviour : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<BackpackBehaviour>().AddItem(runtimeItem);
-            Destroy(gameObject);
+            BackpackBehaviour thebackpack = collision.GetComponent<BackpackBehaviour>();
+            if (thebackpack.Inventory.Count < thebackpack.Capacity)
+            {
+                thebackpack.AddItem(m_ItemConfig);
+                Destroy(gameObject);
+            }
         }
     }
 
