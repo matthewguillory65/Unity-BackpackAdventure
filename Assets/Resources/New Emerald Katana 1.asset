@@ -8,9 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34cf610ef4bd9f14480d9d3231951de1, type: 3}
-  m_Name: New Backpack
+  m_Script: {fileID: 11500000, guid: cef0695434ccc15459cb00b29d9d9589, type: 3}
+  m_Name: New Emerald Katana 1
   m_EditorClassIdentifier: 
-  m_Items:
-  - {fileID: 11400000, guid: d665c0f0f69bc1b409d7e96963a7cf33, type: 2}
-  m_Capacity: 5
+  m_ItemName: New Item
+  m_Sprite: {fileID: 0}

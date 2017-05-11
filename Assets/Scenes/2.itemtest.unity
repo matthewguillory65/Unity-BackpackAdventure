@@ -633,6 +633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Backpack: {fileID: 11400000, guid: 89cf51caae269574982cba48c2427bd7, type: 2}
+  Capacity: 0
+  Inventory: []
 --- !u!1 &1986042169
 GameObject:
   m_ObjectHideFlags: 0
