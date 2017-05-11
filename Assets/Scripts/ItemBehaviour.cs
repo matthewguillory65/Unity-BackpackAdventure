@@ -21,4 +21,14 @@ public class ItemBehaviour : MonoBehaviour {
     {
 		
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<BackpackBehaviour>().AddItem(runtimeItem);
+            Destroy(gameObject);
+        }
+    }
+
 }
