@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: New Backpack
   m_EditorClassIdentifier: 
   m_Items:
-  - {fileID: 11400000, guid: d665c0f0f69bc1b409d7e96963a7cf33, type: 2}
+  - {fileID: 11400000, guid: 4b6ca6e5601556942a6d2a8525f985a8, type: 2}
   m_Capacity: 5
