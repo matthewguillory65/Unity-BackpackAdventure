@@ -4,12 +4,15 @@ using UnityEngine;
 
 public abstract class Item : ScriptableObject
 {
-    public string m_ItemName = "New Item";
+    protected string m_ItemName;
+    protected int GUID;
     public Sprite m_Sprite;
 }
 
 public abstract class Weapon : Item
 {
+    protected string prefixid = "001";
     public int m_Damage;
+    public abstract void Initialize();
 
 }
