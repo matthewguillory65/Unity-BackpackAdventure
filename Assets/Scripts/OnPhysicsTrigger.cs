@@ -6,19 +6,23 @@ using UnityEngine.Events;
 public class OnPhysicsTrigger : MonoBehaviour {
 
     [System.Serializable]
-    public class OnTriggerEnter : UnityEvent { }
-    public OnTriggerEnter onTriggerEnter;
+    public class TriggerEnter : UnityEvent { }
+    public TriggerEnter onTriggerEnter;
     [System.Serializable]
-    public class OnTriggerExit : UnityEvent { }
-    public OnTriggerExit onTriggerExit;
+    public class TriggerExit : UnityEvent { }
+    public TriggerExit onTriggerExit;
+    [System.Serializable]
+    public class TriggerEnterItem : UnityEvent<Item> { }
+    public TriggerEnterItem onTriggerEnterItem;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        onTriggerEnter.Invoke();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        onTriggerExit.Invoke();
+    }
 }

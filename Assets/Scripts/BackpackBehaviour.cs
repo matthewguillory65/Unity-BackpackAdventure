@@ -15,7 +15,7 @@ public class BackpackBehaviour : MonoBehaviour {
 
 
     [System.Serializable]
-    public class OnBackpackChange : UnityEvent
+    public class OnBackpackChange : UnityEvent<Item>
     {
 
     }
