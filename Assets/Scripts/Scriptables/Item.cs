@@ -16,3 +16,10 @@ public abstract class Weapon : Item
     public abstract void Initialize();
 
 }
+
+public abstract class Healing : Item
+{
+    protected string prefixid = "002";
+    public int m_Heal;
+    public abstract void Initialize();
+}

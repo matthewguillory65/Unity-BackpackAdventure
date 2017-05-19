@@ -13,12 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemList:
   - theItem: {fileID: 11400000, guid: 4b6ca6e5601556942a6d2a8525f985a8, type: 2}
-    chance: 0.5
-  - theItem: {fileID: 0}
-    chance: 0
-  - theItem: {fileID: 0}
-    chance: 0
-  - theItem: {fileID: 0}
-    chance: 0
-  - theItem: {fileID: 0}
-    chance: 0
+    chance: 1
+  - theItem: {fileID: 11400000, guid: 4b6ca6e5601556942a6d2a8525f985a8, type: 2}
+    chance: 1

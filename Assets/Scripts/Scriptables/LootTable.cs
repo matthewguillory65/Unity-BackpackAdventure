@@ -18,11 +18,11 @@ public class LootTable : ScriptableObject
 
     public List<Item> Roll()
     {
-        float theRoll = Random.Range(0, 1);
+        float theRoll = Random.Range(0f, 1f);
         List<Item> droppedItems = new List<Item>();
 
         foreach (var i in itemList)
-            if (i.chance < theRoll)
+            if (i.chance > theRoll)
                 droppedItems.Add(i.theItem);
 
         return droppedItems;

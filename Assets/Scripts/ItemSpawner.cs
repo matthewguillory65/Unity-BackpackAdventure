@@ -16,9 +16,15 @@ public class ItemSpawner : MonoBehaviour {
     {
         while (true)
         {
+            List<Item> itemsToDrop = new List<Item>();
+
+            itemsToDrop = table.Roll();
+            foreach (var i in itemsToDrop)
+            {
+                GameObject newItem = Instantiate(itemObject);
+                newItem.GetComponent<ItemBehaviour>().m_ItemConfig = i;
+            }
             yield return new WaitForSeconds(timeUntilSpawn);
-            GameObject newItem = Instantiate(itemObject);
-            newItem.GetComponent<ItemBehaviour>().m_ItemConfig = table.Roll()[0];
         }
     }
 }
