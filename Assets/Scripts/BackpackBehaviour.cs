@@ -29,9 +29,9 @@ public class BackpackBehaviour : MonoBehaviour {
 	void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Z) && Inventory.Count > 0)
-            RemoveItem(Inventory[0]);
+            RemoveItem();
         if (Input.GetKey(KeyCode.L) && Inventory.Count > 0)
-            RemoveItem(Inventory[0]);
+            RemoveItem();
         if (Input.GetKeyDown(KeyCode.S))
             SaveInventory();
         if (Input.GetKeyDown(KeyCode.A))
@@ -43,11 +43,16 @@ public class BackpackBehaviour : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.RightArrow))
             m_DropDistance = Mathf.Abs(m_DropDistance);
 
-        if (Input.GetKey(KeyCode.X))
-            AcceptingItems = true;
-        else
-            AcceptingItems = false;
+        if (Input.GetKeyDown(KeyCode.X))
+            RejectAccept();
+        
 	}
+
+    public void RejectAccept()
+    {
+        AcceptingItems = !AcceptingItems;
+        Debug.Log("Flipped");
+    }
 
     //Add item to inventory
     public void AddItem(Item item)
@@ -56,26 +61,25 @@ public class BackpackBehaviour : MonoBehaviour {
     }
 
     //Remove item and set it down
-    public void RemoveItem(Item item)
+    public void RemoveItem()
     {
-        if (!Inventory.Contains(item)) return;
         if (Inventory.Count == 0) return;
         GameObject droppedItem = Instantiate(m_ItemPrefab);
         droppedItem.transform.position = this.transform.position + new Vector3(m_DropDistance, 0);
-        droppedItem.GetComponent<ItemBehaviour>().m_ItemConfig = item;
+        droppedItem.GetComponent<ItemBehaviour>().m_ItemConfig = Inventory[0];
         droppedItem.transform.parent = null;
-        Inventory.Remove(item);
+        Inventory.Remove(Inventory[0]);
     }
 
     //Save this backpack
-    void SaveInventory()
+    public void SaveInventory()
     {
         Backpack inventorySave = ScriptableObject.CreateInstance<Backpack>();
         inventorySave.m_Items = Inventory;
         BackpackSaver.Instance.SaveBackpack(inventorySave, "Inventory");
     }
 
-    void LoadInventory()
+    public void LoadInventory()
     {
         Inventory = BackpackLoader.Instance.LoadBackpack("Inventory").m_Items;
     }
