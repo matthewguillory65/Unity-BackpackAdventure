@@ -8,6 +8,8 @@ public class BackpackBehaviour : MonoBehaviour {
     public Backpack m_Backpack;
     public GameObject m_ItemPrefab;
     public float m_DropDistance; //Distance from player that this drops the item
+    [HideInInspector]
+    public bool AcceptingItems = false;
     
     public int Capacity;
 
@@ -20,18 +22,31 @@ public class BackpackBehaviour : MonoBehaviour {
         Inventory = new List<Item>();
         foreach (var it in m_Backpack.m_Items)
             AddItem(it);
-        LoadInventory();
+        //LoadInventory();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetAxis("Fire1") == 1 && Inventory.Count > 0)
+        if (Input.GetKeyDown(KeyCode.Z) && Inventory.Count > 0)
+            RemoveItem(Inventory[0]);
+        if (Input.GetKey(KeyCode.L) && Inventory.Count > 0)
             RemoveItem(Inventory[0]);
         if (Input.GetKeyDown(KeyCode.S))
             SaveInventory();
         if (Input.GetKeyDown(KeyCode.A))
             LoadInventory();
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            m_DropDistance = -Mathf.Abs(m_DropDistance);
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            m_DropDistance = Mathf.Abs(m_DropDistance);
+
+        if (Input.GetKey(KeyCode.X))
+            AcceptingItems = true;
+        else
+            AcceptingItems = false;
 	}
 
     //Add item to inventory

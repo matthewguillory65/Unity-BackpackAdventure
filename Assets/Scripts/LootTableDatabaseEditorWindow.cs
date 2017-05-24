@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -47,3 +47,4 @@ public class LootTableDatabaseEditorWindow : EditorWindow
             EditorGUILayout.TextField("Table File:", file);
     }
 }
+*/

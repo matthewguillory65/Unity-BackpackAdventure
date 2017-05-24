@@ -20,7 +20,7 @@ public class BackpackLoader : ScriptableObject
 
     public Backpack LoadBackpack(string filename)
     {
-        var path = Application.dataPath + "/Saves/Backpacks/" + filename + ".json";
+        var path = Application.dataPath + "/StreamingAssets/" + filename + ".json";
         var json = System.IO.File.ReadAllText(path);
         var backpack = CreateInstance<Backpack>();
         JsonUtility.FromJsonOverwrite(json, backpack);

@@ -37,7 +37,7 @@ public class ItemBehaviour : MonoBehaviour {
         if (collision.tag == "Player")
         {
             BackpackBehaviour thebackpack = collision.GetComponent<BackpackBehaviour>();
-            if (thebackpack.Inventory.Count < thebackpack.Capacity && Input.GetAxisRaw("Fire2") == 1)
+            if (thebackpack.Inventory.Count < thebackpack.Capacity && thebackpack.AcceptingItems)
             {
                 thebackpack.AddItem(m_ItemConfig);
                 Destroy(gameObject);
