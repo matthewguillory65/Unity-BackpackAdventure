@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cef0695434ccc15459cb00b29d9d9589, type: 3}
-  m_Name: New Emerald Katana
+  m_Name: EmeraldKatana
   m_EditorClassIdentifier: 
-  m_ItemName: Emerald Katana
   m_Sprite: {fileID: 21300000, guid: 0c29e52f45acae84784b8d8b82569d20, type: 3}
+  m_Damage: 0

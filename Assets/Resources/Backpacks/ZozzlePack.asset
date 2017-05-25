@@ -9,8 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34cf610ef4bd9f14480d9d3231951de1, type: 3}
-  m_Name: New Backpack
+  m_Name: ZozzlePack
   m_EditorClassIdentifier: 
   m_Items:
-  - {fileID: 11400000, guid: 4b6ca6e5601556942a6d2a8525f985a8, type: 2}
-  m_Capacity: 5
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_Capacity: 3
