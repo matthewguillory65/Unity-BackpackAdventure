@@ -183,8 +183,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -395, y: 145}
-  m_SizeDelta: {x: 200, y: 60}
+  m_AnchoredPosition: {x: -337, y: 145}
+  m_SizeDelta: {x: 310, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &357594538
 MonoBehaviour:
@@ -218,8 +218,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The 'X' key is used to accept items into your inventory, and also used to
-    stop accepting items.
+  m_Text: 'The ''X'' key is used to accept items into your inventory, and also used
+    to stop accepting items.
+
+    For Android, the movement will be used as tilt controls.'
 --- !u!222 &357594539
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -783,7 +785,7 @@ GameObject:
   - component: {fileID: 1094702494}
   - component: {fileID: 1094702493}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DropItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1513,6 +1515,7 @@ GameObject:
   - component: {fileID: 1857871285}
   - component: {fileID: 1857871286}
   - component: {fileID: 1857871287}
+  - component: {fileID: 1857871288}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1655,6 +1658,17 @@ MonoBehaviour:
   AcceptingItems: 0
   Capacity: 1000
   Inventory: []
+--- !u!114 &1857871288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1857871279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0605ac16fee6460499707be6d1e0d534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1986042169
 GameObject:
   m_ObjectHideFlags: 0
