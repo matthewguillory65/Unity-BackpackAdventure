@@ -7,6 +7,6 @@ public class AndroidMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Translate(Input.acceleration.x, 0, 0);
+        GetComponent<Rigidbody2D>().AddForce(Input.acceleration * 10);
     }
 }
