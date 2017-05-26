@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 11
   productGUID: 067bf4a054114d843a02c2352640c8d1
   AndroidProfiler: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -136,7 +136,8 @@ PlayerSettings:
       depthFormat: 1
   protectGraphicsMemory: 0
   useHDRDisplay: 0
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.Default.BackPackAdventure
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16

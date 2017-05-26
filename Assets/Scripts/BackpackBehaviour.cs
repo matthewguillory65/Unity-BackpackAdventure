@@ -30,8 +30,8 @@ public class BackpackBehaviour : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Z) && Inventory.Count > 0)
             RemoveItem();
-        if (Input.GetKey(KeyCode.L) && Inventory.Count > 0)
-            RemoveItem();
+        if (Input.GetKeyDown(KeyCode.L) && Inventory.Count > 0)
+            RemoveAll();
         if (Input.GetKeyDown(KeyCode.S))
             SaveInventory();
         if (Input.GetKeyDown(KeyCode.A))
@@ -69,6 +69,18 @@ public class BackpackBehaviour : MonoBehaviour {
         droppedItem.GetComponent<ItemBehaviour>().m_ItemConfig = Inventory[0];
         droppedItem.transform.parent = null;
         Inventory.Remove(Inventory[0]);
+    }
+    public void RemoveAll()
+    {
+        if (Inventory.Count == 0) return;
+        for (int i = Inventory.Count; i > 0; i++)
+        {
+            GameObject droppedItem = Instantiate(m_ItemPrefab);
+            droppedItem.transform.position = this.transform.position + new Vector3(m_DropDistance, 0);
+            droppedItem.GetComponent<ItemBehaviour>().m_ItemConfig = Inventory[0];
+            droppedItem.transform.parent = null;
+            Inventory.Remove(Inventory[0]);
+        }
     }
 
     //Save this backpack

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: DefaultBackpack
   m_EditorClassIdentifier: 
   m_Items: []
-  m_Capacity: 10
+  m_Capacity: 1000
